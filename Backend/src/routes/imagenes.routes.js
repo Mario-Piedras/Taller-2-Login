@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const imagenesController = require("../controllers/auth.controller");
+const imagenesController = require("../controllers/imagenes.controller");
 
 // Rutas actualizar una imagen (Recibe la imagen en base64)
 router.put("/subir/:tabla/:campoId/:id", async (req, res) => {

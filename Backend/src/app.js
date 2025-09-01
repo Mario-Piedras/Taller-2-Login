@@ -14,6 +14,6 @@ app.use('/api/personas', require('./routes/personas.routes'));
 app.use('/api/productos', require('./routes/productos.routes'));
 app.use('/api/personas', require('./routes/personas.routes'));
 app.use('/api/auth', require('./routes/auth.routes'));
-app.use('/api/users', require('./routes/users.routes'));
+app.use('/api/usuarios', require('./routes/users.routes'));
 
 module.exports = app;

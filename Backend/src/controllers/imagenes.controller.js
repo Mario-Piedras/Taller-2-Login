@@ -44,7 +44,7 @@ class imagenesController {
             }
 
             // Convertir la imagen de binario a base64
-            const imagenBase64 = registro[0].imagen.toString('base64');
+            const imagenBase64 = rows[0].imagen.toString('base64');
 
             return { imagen: imagenBase64 };
         } catch (error) {
@@ -97,7 +97,7 @@ class imagenesController {
             if (imagenExistente[0]?.imagen) {
                 // Si ya existe una imagen, actualizamos
                 const query = `UPDATE ?? SET imagen = ? WHERE ?? = ?`;
-                const [result] = await db.query(query, [tabla, bufferImagen, campoId, id]);
+                const [result] = await db.query(query, [tabla, imagenBuffer, campoId, id]);
 
                 if (result.affectedRows > 0) {
                     return { message: 'Imagen actualizada correctamente.' };
@@ -107,7 +107,7 @@ class imagenesController {
             } else {
                 // Si no existe imagen, insertamos
                 const query = `UPDATE ?? SET imagen = ? WHERE ?? = ?`;
-                const [result] = await db.query(query, [tabla, bufferImagen, campoId, id]);
+                const [result] = await db.query(query, [tabla, imagenBuffer, campoId, id]);
 
                 if (result.affectedRows > 0) {
                     return { message: 'Imagen insertada correctamente.' };

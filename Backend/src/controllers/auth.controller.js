@@ -43,7 +43,7 @@ class AuthController {
     async iniciarSesión(email, clave) {
         try {
             // Buscar el usuario por email
-            const [usuarios] = await db.query(`SELECT * FROM users WHERE email = ?`, [email]);
+            const [usuarios] = await db.query(`SELECT * FROM usuarios WHERE email = ?`, [email]);
 
             if (usuarios.length === 0) {
                 return {
@@ -76,7 +76,7 @@ class AuthController {
             return {
                 success: true,
                 message: 'Inicio de sesión exitoso',
-                user: usuarioData
+                usuario: usuarioData
             };
         } catch (error) {
             console.error('Error en el inicio de sesión:', error);
